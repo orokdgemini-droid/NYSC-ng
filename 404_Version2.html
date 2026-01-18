@@ -1,0 +1,25 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Page not found — NYSC ng</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <main class="page">
+    <div class="bg-overlay" aria-hidden="true"></div>
+    <section class="center-wrapper">
+      <div class="card" style="max-width:720px;margin:40px auto;text-align:center;">
+        <h1 style="color:var(--gov-green)">404 — Page not found</h1>
+        <p class="muted">The page you requested doesn't exist on this static site.</p>
+        <p><a href="index.html" class="btn-primary" style="text-decoration:none;">Return to Home</a></p>
+      </div>
+      <footer class="gov-footer">
+        <p>&copy; <span id="year404"></span> National Youth Service Corps — NYSC ng</p>
+      </footer>
+    </section>
+  </main>
+  <script>document.getElementById('year404').textContent = new Date().getFullYear();</script>
+</body>
+</html>

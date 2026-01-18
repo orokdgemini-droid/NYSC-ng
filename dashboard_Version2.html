@@ -1,0 +1,97 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NYSC ng — Dashboard</title>
+  <meta name="description" content="NYSC ng Dashboard — static prototype">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="https://via.placeholder.com/32.png?text=NYSC" />
+</head>
+<body>
+  <main class="page">
+    <div class="bg-overlay" aria-hidden="true"></div>
+
+    <header class="gov-header" aria-label="NYSC ng header">
+      <div class="gov-brand">
+        <div class="gov-logo" aria-hidden="true">NYSC</div>
+        <div class="gov-title">
+          <h1>NYSC ng</h1>
+          <p class="gov-sub">National Youth Service Corps — Portal</p>
+        </div>
+      </div>
+
+      <div class="header-actions">
+        <button id="logoutBtn" class="btn-ghost" title="Log out">Logout</button>
+      </div>
+    </header>
+
+    <section class="center-wrapper dashboard-layout" aria-label="Dashboard">
+      <div class="card profile-card" role="region" aria-labelledby="welcome">
+        <div class="profile-top">
+          <div class="avatar-wrap">
+            <img id="avatarImg" src="https://via.placeholder.com/180x180.png?text=Passport" alt="User passport photograph" class="avatar">
+          </div>
+          <div class="profile-info">
+            <h2 id="welcome">Welcome, <span id="displayName">Corper</span></h2>
+            <p class="status"><strong>Status:</strong> <span id="userStatus" class="status-badge">Active</span></p>
+          </div>
+        </div>
+
+        <div class="profile-body">
+          <div class="form-row">
+            <label for="fullName">Full name</label>
+            <input id="fullName" type="text" readonly aria-readonly="true">
+          </div>
+
+          <div class="form-row">
+            <label for="callUp">Call-Up Number</label>
+            <div id="callUp" class="callup-box">Not available</div>
+            <small class="muted">Call-up number will be displayed here when available</small>
+          </div>
+
+          <div class="form-row">
+            <label for="passportUpload">Upload passport (preview only)</label>
+            <input id="passportUpload" type="file" accept="image/*" aria-describedby="passportHelp">
+            <div id="passportHelp" class="muted small">Choose an image to preview. This demo does not upload to a server.</div>
+          </div>
+
+          <div class="preview-row">
+            <div class="preview-card">
+              <p class="muted small">Preview</p>
+              <img id="preview" src="https://via.placeholder.com/150x150.png?text=Preview" alt="Passport preview" class="avatar avatar-md">
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <aside class="card info-card" role="complementary" aria-labelledby="info-heading">
+        <h3 id="info-heading">Account summary</h3>
+        <dl>
+          <dt>Username</dt>
+          <dd id="summaryUsername">—</dd>
+
+          <dt>Program</dt>
+          <dd>National Youth Service</dd>
+
+          <dt>Assigned State</dt>
+          <dd>—</dd>
+        </dl>
+
+        <div class="muted small">Use the upload control to preview a passport image. Click Logout to end the session.</div>
+      </aside>
+    </section>
+
+    <footer class="gov-footer">
+      <p>&copy; <span id="year2"></span> National Youth Service Corps — NYSC ng</p>
+    </footer>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    document.getElementById('year2').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>

@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>NYSC ng — Login</title>
+  <meta name="description" content="NYSC ng — National Youth Service Corps portal (static prototype)">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+  <link rel="icon" href="https://via.placeholder.com/32.png?text=NYSC" />
+</head>
+<body>
+  <main class="page">
+    <div class="bg-overlay" aria-hidden="true"></div>
+
+    <header class="gov-header" aria-label="NYSC ng header">
+      <div class="gov-brand">
+        <div class="gov-logo" aria-hidden="true">NYSC</div>
+        <div class="gov-title">
+          <h1>NYSC ng</h1>
+          <p class="gov-sub">National Youth Service Corps — Portal</p>
+        </div>
+      </div>
+    </header>
+
+    <section class="center-wrapper">
+      <div class="card login-card" role="region" aria-labelledby="login-heading">
+        <h2 id="login-heading">Sign in to your account</h2>
+        <p class="muted">Official NYSC portal prototype — government style</p>
+
+        <form id="login-form" novalidate>
+          <div class="form-row">
+            <label for="username">Username</label>
+            <input id="username" name="username" type="text" autocomplete="username" required aria-required="true" placeholder="e.g., corper">
+          </div>
+
+          <div class="form-row">
+            <label for="password">Password</label>
+            <div class="password-row">
+              <input id="password" name="password" type="password" autocomplete="current-password" required aria-required="true" placeholder="Your password">
+              <button type="button" id="toggle-pw" class="link-btn" aria-label="Show password">Show</button>
+            </div>
+          </div>
+
+          <div id="error" role="alert" class="error" aria-live="polite" hidden></div>
+
+          <div class="form-actions">
+            <button type="submit" class="btn-primary">Log in</button>
+          </div>
+
+          <div class="muted small">
+            Demo credentials — username: <strong>corper</strong> password: <strong>nysc123</strong>
+          </div>
+        </form>
+      </div>
+
+      <footer class="gov-footer">
+        <p>&copy; <span id="year"></span> National Youth Service Corps — NYSC ng</p>
+      </footer>
+    </section>
+  </main>
+
+  <script src="app.js"></script>
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
